@@ -22,7 +22,7 @@ For each dataset, we should do some pre-processing steps to build the proper inp
 Download the data from [here](https://catalog.ldc.upenn.edu/LDC99T42). 
 Now, convert constituency format to Stanford dependency style by following 
 [this repository](https://github.com/hankcs/TreebankPreprocessing).  
-Now, you can build the gold oracle for training data as follows~(it's based on [arc-swift](https://github.com/qipeng/arc-swift) repo):  
+Now, you can build the gold oracle for training data as follows (it's based on [arc-swift](https://github.com/qipeng/arc-swift) repo):  
 
 ```
 cd preprocess/utils
@@ -30,6 +30,7 @@ cd preprocess/utils
 cd preprocess/src
 python gen_oracle_seq.py ../data/train.conll train.seq --transsys ASd --mappings ./utils/mappings-ptb.txt
 ```
+To include `SWAP` operation, you should add ```transition.py``` file to ```transitoin.py``` file of arc-swift repository.  
 
 Finally, you should replace the gold PoS tags with the predicted ones from [Stanford PoS tagger](https://nlp.stanford.edu/software/tagger.shtml).
 You can use [this repository](https://github.com/shuoyangd/hoolock) to do this replacement.
