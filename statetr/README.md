@@ -25,7 +25,7 @@ Just follow the exact instruction that is described in "Sentence Transformer" re
 Here are all paramters that are needed to train your own model:  
 
 ```
-usage: run.py [-h] [--withpunct] [--graphinput] [--poolinghid] [--unlabeled]
+run.py [-h] [--withpunct] [--graphinput] [--poolinghid] [--unlabeled]
               [--freezedp] [--lowercase] [--usepos] [--Bertoptim]
               [--pretrained] [--withbert] [--bertname BERTNAME]
               [--bertpath BERTPATH] [--fhistmodel] [--fcompmodel]
@@ -44,7 +44,7 @@ usage: run.py [-h] [--withpunct] [--graphinput] [--poolinghid] [--unlabeled]
               [--nattentionheads NATTENTIONHEADS]
               [--warmupproportion WARMUPPROPORTION] [--modelpath MODELPATH]
               [--use_topbuffer] [--use_justexist] [--use_two_opts]
-              [--lr_nonbert LR_NONBERT] [--mainpath MAINPATH]
+              [--lr_nonbert LR_NONBERT] [--mainpath MAINPATH] [--debug]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -114,19 +114,21 @@ optional arguments:
   --lr_nonbert LR_NONBERT
                         Learning rate for non-bert
   --mainpath MAINPATH   File to pre-trained char embeddings
+  --debug               Debug phase
+
 ```
 
 To reproduce results of the paper, you can run the model with ```statetr.bash``` for baseline model, and ```statetr_g2g.bash``` 
-for the integrated one.  
+for the integrated one.  For UD results, change the number of epochs to 20.
 
 ## Evaluation:
 
-To evaluate a trained model, add the location of saved model, the input file, and output path to ```predict.bash``` file, 
+To evaluate a trained model, add the location of saved model, the input file, and output path to ```predict.bash``` or ```predict_wsj.bash``` file, 
 then it computes the output CoNLL file, and LAS (UAS) scores.  
 Here are the input requirements for evaluation:  
 
 ```
-usage: test.py [-h] [--datapath DATAPATH] [--testfile TESTFILE]
+test.py [-h] [--datapath DATAPATH] [--testfile TESTFILE]
                [--model_name MODEL_NAME] [--batchsize BATCHSIZE]
                [--mainpath MAINPATH]
 
@@ -139,15 +141,13 @@ optional arguments:
   --batchsize BATCHSIZE
                         Batch size number
   --mainpath MAINPATH   File to test the model
+
 ```
 
-```eval.pl``` file is used as the official evaluation script for English Penn Treebank.
+```eval.pl``` and ```ud_eval.py``` files are used as the official evaluation script for English Penn Treebank, and UD Treebanks. 
 
 ## Error Analysis:  
 
 To replicate Figure 3 and Table 3 of the paper, you can donwload [MaltEval tool](https://cl.lingfil.uu.se/~nivre/research/MaltEval.html), and use
-the output predictions of ```predict.bash``` file, and gold dependencies to re-create plots. It's so easy, just one command!  
+the output predictions of ```predict_wsj.bash``` or ```predict.bash``` file, and gold dependencies to re-create plots. It's so easy, just one command!  
 
-## TODO:
-
-We will release pre-trained models at the conference time.
