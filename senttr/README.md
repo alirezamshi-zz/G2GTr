@@ -30,7 +30,7 @@ cd preprocess/utils
 cd preprocess/src
 python gen_oracle_seq.py ../data/train.conll train.seq --transsys ASd --mappings ./utils/mappings-ptb.txt
 ```
-To include `SWAP` operation, you should add ```transition.py``` file to ```transitoin.py``` file of arc-swift repository.  
+To include `SWAP` operation, you should update `transition.py` and `parserstate.py` files of arc-swift repository with our `transition.py` and `parserstate.py` files.  
 
 Finally, you should replace the gold PoS tags with the predicted ones from [Stanford PoS tagger](https://nlp.stanford.edu/software/tagger.shtml).
 You can use [this repository](https://github.com/shuoyangd/hoolock) to do this replacement.
@@ -38,7 +38,7 @@ You can use [this repository](https://github.com/shuoyangd/hoolock) to do this r
 ### UD Treebanks:
 
 Download the data from [here](http://hdl.handle.net/11234/1-2895). 
-Since our models work with CoNLL-X format, you should convert dataset from CoNLL-U format to CoNLL-X format with [this tool](https://github.com/UniversalDependencies/tools).
+Since our models work with CoNLL-X format, you should convert dataset from CoNLL-U format to CoNLL-X format with [this tool](https://github.com/UniversalDependencies/tools). Then, you can find oracles by the modified version of arc-swift, as mentioned in above section.
 ## Training :
 
 To train Sentence Transformer model, and its combination with Graph2Graph Transformer, you can check the following details:  
