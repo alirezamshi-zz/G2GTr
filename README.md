@@ -11,7 +11,7 @@ To reproduce results of all variations of StateTr model, you can find all requir
 
 ## General Graph-to-Graph Transformer
 
-To use our Graph-to-Graph Transformer for other NLP tasks, plese refere to [this repository]().  
+To use our Graph-to-Graph Transformer for other NLP tasks, plese refere to [this repository](https://github.com/idiap/g2g-transformer).  
 
 ## Citation
 
