@@ -1,5 +1,5 @@
 # Graph-to-Graph Transformer
-Pytorch implementation of ["Graph-to-Graph Transformer for Transition-based Dependency Parsing"](https://arxiv.org/abs/1911.03561)
+Pytorch implementation of ["Graph-to-Graph Transformer for Transition-based Dependency Parsing"](https://www.aclweb.org/anthology/2020.findings-emnlp.294/)
 
 ## Sentence Transformer
 
