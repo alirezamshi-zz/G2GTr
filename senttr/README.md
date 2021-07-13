@@ -38,7 +38,7 @@ You can use [this repository](https://github.com/shuoyangd/hoolock) to do this r
 ### UD Treebanks:
 
 Download the data from [here](http://hdl.handle.net/11234/1-2895). 
-Since our models work with CoNLL-X format, you should convert dataset from CoNLL-U format to CoNLL-X format with [this tool](https://github.com/UniversalDependencies/tools). Then, you can find oracles by the modified version of arc-swift, as mentioned in above section.
+Since our models work with CoNLL-X format, you should convert dataset from CoNLL-U format to CoNLL-X format with [this tool](https://github.com/alirezamshi/G2GTr/blob/master/senttr/conllu_to_conllx_no_underline.pl). Then, you can find oracles by the modified version of arc-swift, as mentioned in above section.
 ## Training :
 
 To train Sentence Transformer model, and its combination with Graph2Graph Transformer, you can check the following details:  
