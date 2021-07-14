@@ -30,7 +30,7 @@ cd preprocess/utils
 cd preprocess/src
 python gen_oracle_seq.py ../data/train.conll train.seq --transsys ASd --mappings ./utils/mappings-ptb.txt
 ```
-To include `SWAP` operation, you should update `transition.py` and `parserstate.py` files of arc-swift repository with our `transition.py` and `parserstate.py` files.  
+To include `SWAP` operation, you should update `transition.py` and `parserstate.py` files of arc-swift repository with our `transition.py` and `parserstate.py` files (for `transition.py` file, update the `ArcStandard` class) .  
 
 Finally, you should replace the gold PoS tags with the predicted ones from [Stanford PoS tagger](https://nlp.stanford.edu/software/tagger.shtml).
 You can use [this repository](https://github.com/shuoyangd/hoolock) to do this replacement.
